@@ -157,6 +157,12 @@
                                     <div class="news-auther"><span class="time">Email: <%= user.email %></span></div>
                                     <em style="color: #a2a6ab ">User's score: <%= user.accurate %></em>
                                 </div>
+                                  <% if user_signed_in? %>
+                                <div style="margin-bottom: 30px">
+                <%= render 'follow_form', follower: user %>
+                <%=link_to 'Visit',my_friend_pages_path(:id => user.id),:class => "btn btn-outline-dark", :style => "margin-top: 5px"%>
+              </div> 
+              <% end %>
                             </div>
                             <% end %>
                         <% end %>
@@ -182,6 +188,12 @@
                                     <div class="news-auther"><span class="time">Email: <%= user.email %></span></div>
                                     <em style="color: #a2a6ab ">Have <%= user.reviews.count %> reviews</em>
                                 </div>
+                                <% if user_signed_in? %>
+                                <div style="margin-bottom: 30px">
+                <%= render 'follow_form', follower: user %>
+                <%=link_to 'Visit',my_friend_pages_path(:id => user.id),:class => "btn btn-outline-dark", :style => "margin-top: 5px"%>
+              </div> 
+              <% end %>
                             </div>
                             <% end %>
                         <% end %>

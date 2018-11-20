@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'mini_racer'
+
+#login with google function
+gem "omniauth-google-oauth2"
 gem 'devise'
+
 gem 'carrierwave'
 
 gem 'acts-as-taggable-on'

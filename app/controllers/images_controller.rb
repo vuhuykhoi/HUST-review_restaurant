@@ -19,6 +19,7 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    
   end
 
   # POST /images
@@ -28,8 +29,7 @@ class ImagesController < ApplicationController
     @image.user_id = current_user.id
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
+         format.html{redirect_to edit_user_registration_path}
       else
         format.html { render :new }
         format.json { render json: @image.errors, status: :unprocessable_entity }
@@ -42,8 +42,7 @@ class ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image }
+        format.html{redirect_to edit_user_registration_path}
       else
         format.html { render :edit }
         format.json { render json: @image.errors, status: :unprocessable_entity }

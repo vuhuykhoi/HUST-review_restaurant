@@ -25,8 +25,13 @@ vi:
       signin: "Đăng nhập"
       signup: "Đăng ký" 
       search: "Tìm kiếm"
+      post_review: "Đăng bài"
   devise:
     sessions:
       new:
         login: "Đăng nhập"
         googlelogin: "Đăng nhập với Google"
+  static_pages:
+    home:
+      writeby: "Đăng bởi"
+      review: "Bài đăng"

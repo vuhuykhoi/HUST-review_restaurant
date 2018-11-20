@@ -21,7 +21,7 @@
       </div>
       <% if user_signed_in? %>
         <%= link_to new_review_path, class: 'btn btn-outline-white' do %>
-          <i class="fa fa-plus"></i> Review
+          <i class="fa fa-plus"></i> <%=t(".post_review")%>
       <% end %>
       <% end %>
       <ul class="navbar-nav">

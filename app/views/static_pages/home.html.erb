@@ -4,7 +4,7 @@
 
   <section class="banner-sec">
     <div class="container">
-     <h3 class="heading-large"><em>Review</em></h3>
+     <h3 class="heading-large"><em><%=t(".review")%></em></h3>
      <hr style="height:2px;border:none;color:#333;background-color:#333;" />
      <div class="row">
       <div class="col-md-3">
@@ -32,7 +32,7 @@
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
               <% end %>
-              <p class="card-text"><small class="text-time"><em>Written by: <%= review.user.name %></em></small></p>
+              <p class="card-text"><small class="text-time"><em><%=t(".writeby")%>: <%= review.user.name %></em></small></p>
               <p class="card-text", style="color: #969393"><small><em><%= time_ago_in_words(review.created_at) %></em></small></p>
             </div>
           </div>
@@ -65,7 +65,7 @@
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
               <% end %>
-              <p class="card-text"><small class="text-time"><em>Written by: <%= review.user.name %></em></small></p>
+              <p class="card-text"><small class="text-time"><em><%=t(".writeby")%>: <%= review.user.name %></em></small></p>
               <p class="card-text", style="color: #969393"><small><em><%=time_ago_in_words(review.created_at) %></em></small></p>
             </div>
           </div>
@@ -96,7 +96,7 @@
                     <div class="news-title">
                       <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                     </div>
-                    <div class="time-text"><em>Written by: <%= review.user.name %></em></div>
+                    <div class="time-text"><em><%=t(".writeby")%>: <%= review.user.name %></em></div>
                     <div class="time-text"><em style="color: #969393"><%= time_ago_in_words(review.created_at)  %></em></div>
                     <div class="news-des"><%= truncate(review.description, length: 250, separator: ' ') %></div>
                   </div>
@@ -111,7 +111,7 @@
                     <div class="news-title">
                       <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                     </div>
-                    <div class="time-text"><em>Written by: <%= review.user.name %></em></div>
+                    <div class="time-text"><em><%=t(".writeby")%>: <%= review.user.name %></em></div>
                     <div class="time-text"><em style="color: #969393"><%= time_ago_in_words(review.created_at)  %></em></div>
                     <div class="news-des"><%= truncate(review.description, length: 250, separator: ' ') %></div>
                     <div></div>

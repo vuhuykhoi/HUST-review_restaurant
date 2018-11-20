@@ -13,7 +13,7 @@
       </ul>
       <div class="mr-auto">
         <%= form_tag reviews_path, id: 'search-form', class: 'form-inline my-2 my-lg-0', method: :get do %>
-          <%= text_field_tag :search, params[:search], placeholder: 'Search', class: 'form-control mr-sm-2' %>
+          <%= text_field_tag :search, params[:search], placeholder: t('.search'), class: 'form-control mr-sm-2' %>
           <%= button_tag nil, class:'btn btn-outline-white my-2 my-sm-0' do %>
             <i class="fa fa-search" aria-hidden="true"></i>
           <% end %>
@@ -38,10 +38,10 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%=link_to "Sign in",new_user_session_path, class: 'nav-link' %>
+            <%=link_to t(".signin"),new_user_session_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%=link_to "Sign up",new_user_registration_path, class: 'nav-link' %>
+            <%=link_to t(".signup"),new_user_registration_path, class: 'nav-link' %>
           </li>
         <% end %>
       </ul>

@@ -19,16 +19,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+vi:
   shared:
     navigation:
-      signin: "Sign In"
-      signup: "Sign Up" 
-      search: "Search"
+      signin: "Đăng nhập"
+      signup: "Đăng ký" 
+      search: "Tìm kiếm"
   devise:
     sessions:
       new:
-        login: "Sign In"
-        googlelogin: "Sign in with Google"
-
-
+        login: "Đăng nhập"
+        googlelogin: "Đăng nhập với Google"

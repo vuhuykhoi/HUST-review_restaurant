@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new]
   # GET /reviews
   # GET /reviews.json
   def index
@@ -19,11 +19,7 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/new
-  def new
-    @review = Review.new
-    @foods = Food.all
-    @restaurants = Restaurant.all
-  end
+
 
   # GET /reviews/1/edit
   def edit
@@ -31,6 +27,12 @@ class ReviewsController < ApplicationController
     @foods = Food.all
     @restaurants = Restaurant.all
 
+  end
+
+  def new
+    @review = Review.new
+    @foods = Food.all
+    @restaurants = Restaurant.all
   end
 
   # POST /reviews
@@ -94,4 +96,6 @@ class ReviewsController < ApplicationController
       
       params.require(:review).permit(:title, :description, :user_id, :food_id, :restaurant_id, :score)
     end
+
+
 end

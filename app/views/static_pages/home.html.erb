@@ -33,7 +33,7 @@
   			  						  <span class="fa fa-star"></span>
   			  						<% end %>
                                 <p class="card-text"><small class="text-time"><em>Written by: <%= review.user.name %></em></small></p>
-                                <p class="card-text", style="color: #969393"><small><em><%= review.created_at %></em></small></p>
+                                <p class="card-text", style="color: #969393"><small><em><%= time_ago_in_words(review.created_at) %></em></small></p>
                             </div>
                         </div>
                 <% end -%>
@@ -66,7 +66,7 @@
   			  						  <span class="fa fa-star"></span>
   			  						<% end %>
                                 <p class="card-text"><small class="text-time"><em>Written by: <%= review.user.name %></em></small></p>
-                                <p class="card-text", style="color: #969393"><small><em><%= review.created_at %></em></small></p>
+                                <p class="card-text", style="color: #969393"><small><em><%=time_ago_in_words(review.created_at) %></em></small></p>
                             </div>
                         </div>
                 <% end -%>
@@ -97,7 +97,7 @@
                             <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                           </div>
                     <div class="time-text"><em>Written by: <%= review.user.name %></em></div>
-                    <div class="time-text"><em style="color: #969393"><%= review.created_at %></em></div>
+                    <div class="time-text"><em style="color: #969393"><%= time_ago_in_words(review.created_at)  %></em></div>
                     <div class="news-des"><%= truncate(review.description, length: 250, separator: ' ') %></div>
                   </div>
                       </div>
@@ -112,7 +112,7 @@
                             <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                           </div>
                     <div class="time-text"><em>Written by: <%= review.user.name %></em></div>
-                    <div class="time-text"><em style="color: #969393"><%= review.created_at %></em></div>
+                    <div class="time-text"><em style="color: #969393"><%= time_ago_in_words(review.created_at)  %></em></div>
                     <div class="news-des"><%= truncate(review.description, length: 250, separator: ' ') %></div>
                     <div></div>
                   </div>

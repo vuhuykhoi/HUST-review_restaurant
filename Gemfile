@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'mini_racer'
 
+gem 'rails-i18n'
+
 #login with google function
 gem "omniauth-google-oauth2"
 gem 'devise'

@@ -11,11 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
-
     <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
       <%= render 'shared/navigation' %>
     <% end %>
     <%= yield %>
-
   </body>
+
 </html>

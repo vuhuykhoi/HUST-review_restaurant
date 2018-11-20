@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  #login with google
+  devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   validates :name,presence: true
   #validates :email,presence: true
@@ -42,4 +44,19 @@ class User < ActiveRecord::Base
     active = reviews.count
     active
   end
+
+  #login with google
+  def self.from_omniauth(access_token)
+  data = access_token.info
+  user = User.where(:email => data["email"]).first
+
+  unless user
+    password = Devise.friendly_token[0,20]
+    user = User.create(name: data["name"], email: data["email"],
+      password: password, password_confirmation: password
+    )
+  end
+  user
+end
+
 end

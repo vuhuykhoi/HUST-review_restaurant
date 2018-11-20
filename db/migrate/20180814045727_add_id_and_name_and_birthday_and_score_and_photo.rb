@@ -7,7 +7,7 @@ class AddIdAndNameAndBirthdayAndScoreAndPhoto < ActiveRecord::Migration
     add_column :users,:photo,:string
     
     #add_index :users,:id,unique: true
-    add_index :users,:name,unique: true
+    add_index :users,:name
     #add_index :users,:adress,unique: true
     #add_index :users,:password,unique: true
   end

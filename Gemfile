@@ -5,6 +5,8 @@ gem 'mini_racer'
 gem 'rails_admin'
 gem "cancancan"
 
+gem 'dotenv-rails'
+
 gem 'rails-i18n'
 
 #login with google function

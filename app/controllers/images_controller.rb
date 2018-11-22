@@ -15,11 +15,16 @@ class ImagesController < ApplicationController
   # GET /images/new
   def new
     @image = Image.new
+    respond_to do |format|
+      format.js 
+    end
   end
 
   # GET /images/1/edit
   def edit
-    
+    respond_to do |format|
+      format.js 
+    end
   end
 
   # POST /images

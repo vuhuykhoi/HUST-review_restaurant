@@ -98,7 +98,7 @@
                     </div>
                     <div class="time-text"><em><%=t(".writeby")%>: <%= review.user.name %></em></div>
                     <div class="time-text"><em style="color: #969393"><%= time_ago_in_words(review.created_at)  %></em></div>
-                    <div class="news-des"><%= truncate(review.description, length: 250, separator: ' ') %></div>
+                    <div class="news-des"><%= truncate(review.description.html_safe, length: 250, separator: ' ') %></div>
                   </div>
                 </div>
               </div>

@@ -12,6 +12,7 @@ gem "omniauth-google-oauth2"
 gem 'devise'
 
 gem 'carrierwave'
+gem 'cloudinary'
 
 gem 'acts-as-taggable-on'
 

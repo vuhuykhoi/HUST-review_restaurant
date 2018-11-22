@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   validates :name,presence: true
   #validates :email,presence: true
   #validates :password,presence: true
+  attr_accessor :current_password
   def role_enum
     ["super admin", "publisher", "member"]
   end

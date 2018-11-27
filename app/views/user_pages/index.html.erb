@@ -3,23 +3,24 @@
 <div class="container" id="mypage">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link" id="tab1"  data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home
+      <a class="nav-link" id="tab1"  data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="false">Home
    </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab2" data-toggle="tab" href="#about" role="tab" aria-controls="menu1" aria-selected="false">About</a>
+      <a class="nav-link" id="tab2" data-toggle="tab" href="#" role="tab" aria-controls="menu1" aria-selected="false">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab3" data-toggle="tab" href="#following" role="tab" aria-controls="menu2" aria-selected="true">Following</a>
+      <a class="nav-link" id="tab3" data-toggle="tab" href="#" role="tab" aria-controls="menu2" aria-selected="true">Following</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab4" data-toggle="tab" href="#follower" role="tab" aria-controls="menu3" aria-selected="false">Follower</a>
+      <a class="nav-link" id="tab4" data-toggle="tab" href="#" role="tab" aria-controls="menu3" aria-selected="false">Follower</a>
     </li>
 
   </ul>
   <br/>
 
   <div class="tab-content" id="myTabContent">
+ 
   <!-- 
     <div id="home" class="tab-pane fade"></div>
     <div id="about" class="tab-pane fade"></div>
@@ -28,14 +29,42 @@
   -->
   </div>
 
+  <div class="modal" tabindex="-1" role="dialog">
+    
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 </div>
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
+  $('#tab1').attr("class", "nav-link active show");
   $('#myTabContent').html("<%= escape_javascript(render partial: 'form_home_contain' ) %>");
-  
+ 
+
   $("#tab1").click(function(){
       $('#myTabContent').html("<%= escape_javascript(render partial: 'form_home_contain' ) %>");
     });
@@ -45,23 +74,44 @@ $(document).ready(function(){
   });
 
   $("#tab3").click(function(){
+    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_following_contain' ) %>");
+    
       /*url_get_following = '<%=following_user_page_path(@user.id)%>';
       $.ajax({
-        data:url_get_following,
+        data:{},
         url:url_get_following,
-        type: "POST",
-        success:function(data){
-          console.log(data);
+        type: "GET",
+        dataType:"json",
+        success:function(data)  {             
+            $('#myTabContent').html("<%= escape_javascript(render partial: 'form_following_contain' ) %>");
         },
-      });
-      ;*/
-  
-    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_following_contain')%>");
+         error : function() {
+            alert("ERROR in  following function respond_to format");
+            $('#myTabContent').html("cannot load list following");  
+        },
+
+      });*/
+      
+            
   });
 
   $("#tab4").click(function(){
-    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_follower_contain' ) %>");
+     $('#myTabContent').html("<%= escape_javascript(render partial: 'form_follower_contain' ) %>");
+   /* url_get_followers = '<%=followers_user_page_path(@user.id)%>';
+      $.ajax({
+        data:{},
+        url:url_get_followers,
+        type: "GET",
+        dataType:"json",
+        success:function(data)  {             
+           
+        },
+         error : function() {
+            alert("ERROR in  following function respond_to format");
+            $('#myTabContent').html("cannot load list following");  
+        },
 
+      });*/
   });
 
 });

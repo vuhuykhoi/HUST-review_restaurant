@@ -28,11 +28,10 @@ class FollowsController < ApplicationController
       follower_id: current_user.id,
       followed_id: params[:followed_id]
       )
-
+    @other_user = User.find(@follow.followed_id);
     respond_to do |format|
       if @follow.save
-        format.html { redirect_to "/mypages", notice: 'Follow was successfully created.' }
-        format.json { render :show, status: :created, location: @follow }
+       format.js
       else
         format.html { render :new }
         format.json { render json: @follow.errors, status: :unprocessable_entity }
@@ -57,12 +56,13 @@ class FollowsController < ApplicationController
   # DELETE /follows/1
   # DELETE /follows/1.json
   def destroy
+    @other_user = User.find(@follow.followed_id)
     @follow.destroy
     respond_to do |format|
-      format.html { redirect_to "/mypages", notice: 'Follow was successfully destroyed.' }
-      format.json { head :no_content }
+      format.js
     end
   end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_follow

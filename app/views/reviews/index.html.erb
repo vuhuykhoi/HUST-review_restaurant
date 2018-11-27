@@ -33,7 +33,7 @@
 		  							<span style="color: grey;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;written by <em><%= r.user.name %></em></span>
 		  						</div>
 		  						<div class="col-6" style="text-align: right;">
-		  							<span style="color: grey;">created at <%=r.created_at %> &nbsp;&nbsp;&nbsp;</span>
+		  							<span style="color: grey;">created at <%=time_ago_in_words(r.created_at) %> &nbsp;&nbsp;&nbsp;</span>
 		  						</div>
 		  					</div>
 		  					<p style="font-size: 16px; line-height: 22px; max-height: 86px; overflow: hidden;"><%=r.description %></p>

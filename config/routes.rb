@@ -20,7 +20,12 @@ Rails.application.routes.draw do
     resources :reviews
     resources :restaurants
     resources :foods
-    resources :mypages
+    resources :user_pages do
+        member do
+            get :following , :followers
+        end
+    end
+    
     
     root 'static_pages#home'
 

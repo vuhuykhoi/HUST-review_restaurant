@@ -1,0 +1,69 @@
+<%provide(:title,current_user.name)%>
+<%@user||= current_user%>
+<div class="container" id="mypage">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="tab1"  data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Home
+   </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab2" data-toggle="tab" href="#about" role="tab" aria-controls="menu1" aria-selected="false">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab3" data-toggle="tab" href="#following" role="tab" aria-controls="menu2" aria-selected="true">Following</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab4" data-toggle="tab" href="#follower" role="tab" aria-controls="menu3" aria-selected="false">Follower</a>
+    </li>
+
+  </ul>
+  <br/>
+
+  <div class="tab-content" id="myTabContent">
+  <!-- 
+    <div id="home" class="tab-pane fade"></div>
+    <div id="about" class="tab-pane fade"></div>
+    <div id="following" class="tab-pane fade show active"></div>
+    <div id="follower" class="tab-pane fade"></div> 
+  -->
+  </div>
+
+</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#myTabContent').html("<%= escape_javascript(render partial: 'form_home_contain' ) %>");
+  
+  $("#tab1").click(function(){
+      $('#myTabContent').html("<%= escape_javascript(render partial: 'form_home_contain' ) %>");
+    });
+
+  $("#tab2").click(function(){
+    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_user_profile_view' ) %>");
+  });
+
+  $("#tab3").click(function(){
+      /*url_get_following = '<%=following_user_page_path(@user.id)%>';
+      $.ajax({
+        data:url_get_following,
+        url:url_get_following,
+        type: "POST",
+        success:function(data){
+          console.log(data);
+        },
+      });
+      ;*/
+  
+    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_following_contain')%>");
+  });
+
+  $("#tab4").click(function(){
+    $('#myTabContent').html("<%= escape_javascript(render partial: 'form_follower_contain' ) %>");
+
+  });
+
+});
+
+</script>

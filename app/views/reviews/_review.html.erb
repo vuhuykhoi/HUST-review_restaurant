@@ -1,4 +1,4 @@
-<br>
+<br/>
 <div class="row review-item">
   <div class="col-3" style="font-size: 22px; text-align: center;">
     <%= image_tag(r.restaurant.photo, class: "image") %>
@@ -10,7 +10,7 @@
       <i class="fas fa-user"></i>
       <%= r.user.name %>
     </a>
-    <p class="review-description"><%= truncate(r.description, length: 250, separator: ' ') %></p>
+    <p class="review-description"><%= truncate(r.description.html_safe, length: 250, separator: ' ') %></p>
     <div>
       <div class="review-like">
         <i class="fa fa-thumbs-up"></i>
@@ -42,7 +42,7 @@
         <%= link_to edit_review_path(r), class: 'btn btn-success' do %>
           <i class="fa fa-edit"></i>
         <% end %>
-        <%= link_to review_path(r), method: :delete, class: 'btn btn-danger', 'data-confirm': 'Are you sure?' do %>
+        <%= link_to review_path(r), method: :delete, class: 'btn btn-danger', confirm: "Mày đã chắc chắn chưa?" do %>
           <i class="fa fa-trash-alt"></i>
         <% end %>
         <% end %>

@@ -1,0 +1,1 @@
+$("#follow_form-<%=@other_user.id%>").html("<%= escape_javascript(render partial: 'shared/follow/follow',locals: { follower: @other_user } ) %>");

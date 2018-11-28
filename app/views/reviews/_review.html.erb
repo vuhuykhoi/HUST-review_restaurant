@@ -1,5 +1,5 @@
 <br/>
-<div class="row review-item">
+<div class="row review-item" id="<%=r.id%>">
   <div class="col-3" style="font-size: 22px; text-align: center;">
     <%= image_tag(r.restaurant.photo, class: "image") %>
     <a class="review-restaurant" href="<%= restaurant_path(r.restaurant) %>"><%= r.restaurant.name %></a>
@@ -42,13 +42,13 @@
         <%= link_to edit_review_path(r), class: 'btn btn-success' do %>
           <i class="fa fa-edit"></i>
         <% end %>
-        <%= link_to review_path(r), method: :delete, class: 'btn btn-danger', confirm: "Mày đã chắc chắn chưa?" do %>
+        <%= link_to review_path(r), method: :delete, class: 'btn btn-danger', remote: true,'data-confirm': "Delete this review?" do %>
           <i class="fa fa-trash-alt"></i>
         <% end %>
         <% end %>
         <a href="<%= review_path(r) %>" class="btn btn-dark">
           <i class="fa fa-eye"></i>
-        </a>
+      </a>
       </div>
     </div>
   </div>

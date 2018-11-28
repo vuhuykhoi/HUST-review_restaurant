@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'flag-icons-rails'
+
 gem 'mini_racer'
 
 gem 'rails_admin'

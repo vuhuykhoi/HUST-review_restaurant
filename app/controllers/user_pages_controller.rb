@@ -4,7 +4,14 @@ class UserPagesController < ApplicationController
     def index
         @followed_users=current_user.following
         @follower_users=current_user.followers
-        @reviews = current_user.reviews
+
+        @reviews = current_user.reviews.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+
+        respond_to do |format|
+            format.html
+            format.js
+        end
+
     end
     
     def following

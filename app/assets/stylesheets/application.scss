@@ -14,7 +14,8 @@
  *= require_tree .
  *= require_self
  */
-
+ 
+@import "bootstrap";
 
 .user_infomation_text{
      font-size: 15px;
@@ -22,4 +23,8 @@
 
 html {
   overflow-y: scroll;
+}
+
+.dropdown-toggle::after {
+    display:none;
 }

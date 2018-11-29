@@ -1,5 +1,15 @@
 source 'https://rubygems.org'
 
+
+#rate sao
+gem 'ratyrate'
+
+gem 'jquery-turbolinks'
+
+#phan trang
+gem "will_paginate"
+gem "bootstrap-will_paginate"
+
 gem 'flag-icons-rails'
 
 gem 'mini_racer'

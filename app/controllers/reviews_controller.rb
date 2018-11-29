@@ -7,9 +7,12 @@ class ReviewsController < ApplicationController
     @reviews = Review.includes(:restaurant).references(:restaurants).all
     if params[:search].present?
       s = "%#{params[:search]}%"
-      @reviews = @reviews.where("title LIKE ? OR restaurants.name LIKE ?", s, s)
+      @reviews = @reviews.where("title LIKE ? OR restaurants.name LIKE ?", s, s).paginate(page: params[:page], per_page: 5)
     end
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /reviews/1

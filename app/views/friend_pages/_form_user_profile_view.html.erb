@@ -4,7 +4,7 @@
     <div class="col-md-4">
       <div class="text-center">
         
-        <% if avatar_url(current_user)=="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1601/stalkerstudent160101173/50961996-user-icon-vector-flat-design-style-eps-10.jpg" %>
+        <% if avatar_url(@friend_user)=="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1601/stalkerstudent160101173/50961996-user-icon-vector-flat-design-style-eps-10.jpg" %>
           <% if @friend_user.photo==nil %>
             <%= image_tag(avatar_url(@friend_user), id: 'mypage-user-avatar') %>
           <% else %>
@@ -42,6 +42,7 @@
         </div>
       </form>
 
+    
     </div>
   </div>
 </div>

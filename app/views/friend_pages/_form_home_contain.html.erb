@@ -1,5 +1,8 @@
-<div class="container">
-  <% @reviews.each do |r| %>
-    <%= render 'reviews/review', r: r %>
-  <% end %>
+<div id="list_reviews">
+ <%= render partial: "reviews/review", collection: @reviews, as: :r %>
 </div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @reviews%>
+</div>
+

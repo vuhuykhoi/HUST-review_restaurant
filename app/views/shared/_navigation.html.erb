@@ -70,11 +70,11 @@
             <a class="nav-link dropdown-toggle" href="" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-globe" style="font-size:2rem;padding-top:5px "  title="change language"></span></a>
               <div class="dropdown-menu" aria-labelledby="dropdown09">
                 <%= link_to url_for( :locale => 'en' ),:class=> 'dropdown-item' do %>
-                <span class='flag-icon flag-icon-us'></span>  English
+                <span class='flag-icon flag-icon-us'></span>   <%=t('.english')%>
                 <%end%>
 
                 <%= link_to url_for( :locale => 'vi' ),class: 'dropdown-item' do%>
-                <span class='flag-icon flag-icon-vn'></span>  Vietnamese
+                <span class='flag-icon flag-icon-vn'></span>  <%=t('.vietnamese')%>
                 <%end%>
 
               </div>

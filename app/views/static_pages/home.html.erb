@@ -13,7 +13,7 @@
         <% if i <2 %>
           <div class="card"> 
             <%= image_tag(review.restaurant.photo, class: "img-fluid", style: "max-height: 150px") %>
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Hot</span> </div>
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger"><%=t('.hot')%></span> </div>
             <div class="card-body">
               <div class="news-title">
                 <h2 class=" title-small"><a href="<%= review_path(review) %>"><b><%= review.title %></b></a></h2>
@@ -46,7 +46,7 @@
           <% if i >=2 %>
           <div class="card"> 
             <%= image_tag(review.restaurant.photo, class: "img-fluid", style: "max-height: 150px") %>
-            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Hot</span> </div>
+            <div class="card-img-overlay"> <span class="badge badge-pill badge-danger"><%=t('.hot')%></span> </div>
             <div class="card-body">
               <div class="news-title">
                 <h2 class=" title-small"><a href="<%= review_path(review) %>"><b><%= review.title %></b></a></h2>
@@ -92,7 +92,7 @@
                 <div class="news-block">
                   <div class="news-media">
                     <%= image_tag(review.restaurant.photo, class: "img-fluid", style: "max-height: 350px") %>
-                    <div class="card-img-overlay"> <span class="badge badge-pill badge-success", style="font-size: 21px">New</span> </div>
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-success", style="font-size: 21px"><%=t('new')%></span> </div>
                     <div class="news-title">
                       <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                     </div>
@@ -107,7 +107,7 @@
                 <div class="news-block">
                   <div class="news-media">
                     <%= image_tag(review.restaurant.photo, class: "img-fluid", style: "max-height: 350px") %>
-                    <div class="card-img-overlay"> <span class="badge badge-pill badge-success">New</span> </div>
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-success"><%=t('new')%></span> </div>
                     <div class="news-title">
                       <h2 class=" title-large"><a href="<%= review_path(review) %>"><strong><%= review.title %></strong></a></h2>
                     </div>
@@ -129,7 +129,7 @@
     <section class="section-01">
       <div class="container">
         <div class="row">
-          <h3 class="heading-large"><em>User</em></h3>
+          <h3 class="heading-large"><em><%=t('.user')%></em></h3>
           <aside class="col-lg-7 side-bar col-md-12">
             <ul class="nav nav-tabs" role="tablist" id="myTab">
              <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Most accurate user</a> </li> 
@@ -175,7 +175,7 @@
                       <% if user_signed_in? %>
                       <div style="margin-bottom: 30px">
                         <%=render 'shared/follow/follow_form',follower:user %>
-                        <%=link_to 'Visit',my_friend_pages_path(:id => user.id),:class => "btn btn-outline-dark", :style => "margin-top: 5px"%>
+                        <%=link_to 'visit',my_friend_pages_path(:id => user.id),:class => "btn btn-outline-dark", :style => "margin-top: 5px"%>
                       </div> 
                       <% end %>  
                     </div>
@@ -220,10 +220,10 @@
             
             <div class="col-lg-5">
                 <div class="video-sec">
-                  <h4 class="heading-small"><em>About banasamu</em></h4>
+                  <h4 class="heading-small"><em><%=t(".playmusic")%></em></h4>
                   <div class="video-block">
                     <div class="embed-responsive embed-responsive-4by3">
-                      <iframe width="647" height="364" src="https://www.youtube.com/embed/Uhq_N86SCQM?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                     <iframe width="853" height="480" src="https://www.youtube.com/embed/v5bClGpH0iI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   </div>
                 </div>
